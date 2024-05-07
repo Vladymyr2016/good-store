@@ -1,0 +1,19 @@
+.header {
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logo {
+    color: white;
+
+    a {
+        list-style-type: none;
+    }
+}
+
+.home {}
+
+.cart {}
