@@ -23,12 +23,16 @@ const Shop = () => {
       {products.length > 0 ? (
         products.map((item) => (
           <li className={s.item} key={item.id}>
-            <img className={s.img} src={item.thumbnail} alt={item.title} />
-            <h2 className={s.title}>{item.title}</h2>
-            <p className={s.description}>{item.description}</p>
-            <p className={s.price}>{item.price}$</p>
-            <button className={s.btn}>See more</button>
-            <button className={s.btn}>Add to cart</button>
+            <div className={s.boxImg}>
+              <img className={s.img} src={item.thumbnail} alt={item.title} />
+              <h2 className={s.title}>{item.title}</h2>
+              <p className={s.description}>{item.description}</p>
+              <p className={s.price}>{item.price}$</p>
+            </div>
+            <div className={s.boxBtn}>
+              <button className={s.btn}>See more</button>
+              <button className={s.btn}>Add to cart</button>
+            </div>
           </li>
         ))
       ) : (
