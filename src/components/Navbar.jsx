@@ -7,7 +7,7 @@ const Navbar = () => {
       <NavLink className={s.logo} to="/">
         GOOD-SHOP
       </NavLink>
-      <nav>
+      <nav className={s.nav}>
         <NavLink className={s.home} to="/">
           Home
         </NavLink>
