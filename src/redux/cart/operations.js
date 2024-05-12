@@ -16,3 +16,15 @@ export const fetchCartThunk = createAsyncThunk(
     }
   }
 );
+
+export const addToCartThunk = createAsyncThunk(
+  'addToCart',
+  async (product, thunkApi) => {
+    try {
+      const { data } = await cartAPI.post('/cart', product);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../../services/API';
 import s from './Shop.module.css';
+import { addToCartThunk } from '../../redux/cart/operations';
+import { useDispatch } from 'react-redux';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,7 +34,14 @@ const Shop = () => {
             </div>
             <div className={s.boxBtn}>
               <button className={s.btn}>See more</button>
-              <button className={s.btn}>Add to cart</button>
+              <button
+                onClick={() => {
+                  dispatch(addToCartThunk(item));
+                }}
+                className={s.btn}
+              >
+                Add to cart
+              </button>
             </div>
           </li>
         ))
