@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchCartThunk } from './operations';
 
 const initialState = {
   items: [],
@@ -9,6 +10,11 @@ const initialState = {
 const slice = createSlice({
   name: 'Cart',
   initialState,
+  extraReducers: (builder) => {
+    builder.addCase(fetchCartThunk.fulfilled, (state, { payload }) => {
+      state.items = payload;
+    });
+  },
 });
 
 export const cartReducer = slice.reducer;
