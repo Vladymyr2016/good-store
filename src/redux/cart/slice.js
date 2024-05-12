@@ -10,6 +10,7 @@ const initialState = {
 const slice = createSlice({
   name: 'Cart',
   initialState,
+  selectors: { selectCart: (state) => state.items },
   extraReducers: (builder) => {
     builder.addCase(fetchCartThunk.fulfilled, (state, { payload }) => {
       state.items = payload;
