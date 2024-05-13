@@ -5,6 +5,10 @@
     align-items: center;
     margin-bottom: 10px;
     padding: 10px;
+    background-color: lightblue;
+    border-radius: 15px;
+    box-shadow: -2px -2px 3px 2px gray;
+    width: 90%;
 }
 
 .boxbtn {
@@ -12,4 +16,13 @@
     gap: 15px;
     justify-content: center;
     align-items: center;
+}
+
+.image {
+    border-radius: 15px;
+    width: 100%;
+}
+
+.remove {
+    border-radius: 10px;
 }

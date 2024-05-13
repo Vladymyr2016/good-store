@@ -12,7 +12,7 @@ const ProductCart = ({ id, title, price, thumbnail, count }) => {
           <button>+</button>
         </div>
         <p>{price}$</p>
-        <button>Remove</button>
+        <button className={s.remove}>Remove</button>
       </div>
     </li>
   );
