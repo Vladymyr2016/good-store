@@ -28,3 +28,44 @@ export const addToCartThunk = createAsyncThunk(
     }
   }
 );
+
+export const deleteFromCartThunk = createAsyncThunk(
+  'deleteFromCart',
+  async (id, thunkApi) => {
+    try {
+      const { data } = await cartAPI.delete(`/cart/${id}`);
+      return data.id;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+export const incrementQtyThunk = createAsyncThunk(
+  'incrementQty',
+  async (product, thunkApi) => {
+    try {
+      const { data } = await cartAPI.put(`/cart/${product.id}`, {
+        ...product,
+        count: product.count + 1,
+      });
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const decrementQtyThunk = createAsyncThunk(
+  'decrementQty',
+  async (product, thunkApi) => {
+    try {
+      const { data } = await cartAPI.put(`/cart/${product.id}`, {
+        ...product,
+        count: product.count - 1,
+      });
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

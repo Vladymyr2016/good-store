@@ -3,11 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
     padding: 10px;
     background-color: lightblue;
     border-radius: 15px;
-    box-shadow: -2px -2px 3px 2px gray;
+    box-shadow: 2px 2px 5px 2px gray;
     width: 90%;
 }
 
