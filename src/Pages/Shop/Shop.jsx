@@ -45,7 +45,9 @@ const Shop = () => {
   return (
     <div className={s.main}>
       <div>
-        <button onClick={prevPage}>prev </button>
+        <button disabled={skip === 0} onClick={prevPage}>
+          prev{' '}
+        </button>
         {Array(pageCount)
           .fill('')
           .map((_, index) => (
@@ -71,7 +73,6 @@ const Shop = () => {
                 <p className={s.price}>{item.price}$</p>
               </div>
               <div className={s.boxBtn}>
-                <button className={s.btn}>See more</button>
                 <button
                   onClick={() => {
                     dispatch(addToCartThunk(item));
